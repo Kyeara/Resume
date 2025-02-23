@@ -1,0 +1,312 @@
+#about {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 60px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Profile Wrapper */
+.profile-wrapper {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+/* Portraits */
+.portraits {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Main Portrait with Effects */
+.main-portrait {
+    position: relative;
+    display: inline-block;
+}
+
+/* Profile Image */
+.main-portrait img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #fff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(0.85);
+    animation: scaleInBounce 1s ease-out forwards 0.5s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect: Slight Zoom and Glow */
+.main-portrait img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Rotating Border Effect */
+.main-portrait::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top-color: #007bff;
+    border-right-color: #007bff;
+    animation: rotateBorder 4s linear infinite;
+}
+
+/* Soft Reflection Effect Below Image */
+.main-portrait::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    bottom: -12px;
+    left: 0;
+    border-radius: 50%;
+    filter: blur(6px);
+}
+
+/* Other Portraits */
+.other-portraits img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 10px;
+    border: 3px solid #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Other Portraits */
+.other-portraits img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Content Animation */
+.profile-content {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1s ease-out forwards 0.8s;
+}
+
+.about-title {
+    color: #343a40;
+}
+
+/* Skills Section */
+.skill-item {
+    margin-bottom: 20px;
+}
+
+/* Skill Item Titles */
+.skill-item h4 {
+    font-size: 1.1em;
+    font-weight: normal;
+    margin-bottom: 5px;
+    color: #333; /* Darker text for readability */
+}
+
+/* Progress Bar Container */
+.progress {
+    position: relative;
+    height: 20px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Progress Bar */
+.progress-bar {
+    background-color: #007bff;
+    width: var(--progress-width, 0%); /* Default to 0% if not defined */
+    height: 100%;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    animation: fillBar 2s ease-in-out forwards;
+}
+
+/* Individual Progress Bar Widths */
+.progress-bar[data-width="95"] { --progress-width: 95%; }
+.progress-bar[data-width="90"] { --progress-width: 90%; }
+.progress-bar[data-width="85"] { --progress-width: 85%; }
+.progress-bar[data-width="80"] { --progress-width: 80%; }
+
+/* Offer List - Fix for "What I Offer" Section */
+.offer-list {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeSlideUp 1s ease-out forwards;
+}
+
+.offer-list li {
+    opacity: 1;
+    transform: translateX(0);
+    animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+/* Staggered Animation Delay */
+.offer-list li:nth-child(1) { animation-delay: 0.2s; }
+.offer-list li:nth-child(2) { animation-delay: 0.4s; }
+.offer-list li:nth-child(3) { animation-delay: 0.6s; }
+.offer-list li:nth-child(4) { animation-delay: 0.8s; }
+.offer-list li:nth-child(5) { animation-delay: 1s; }
+.offer-list li:nth-child(6) { animation-delay: 1.2s; }
+
+/* Ensure uniform height for service boxes */
+.services-item {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Icon Styling */
+.services-item .icon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* Heading */
+.services-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Text Content */
+.services-item p {
+    font-size: 14px;
+    color: #555;
+    flex-grow: 1; /* Ensures text fills available space evenly */
+}
+
+/* Hover Effect */
+.services-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure equal height for all boxes in the row */
+@media (min-width: 768px) {
+    .services-item {
+        min-height: 280px; /* Adjust as needed */
+    }
+}
+
+/* Testimonials Slider */
+.testimonial-slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    height: 160px; /* Adjust height based on content */
+}
+
+/* Individual Testimonial */
+.testimonial {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Active Testimonial Visibility */
+.testimonial:nth-child(1) { animation: slideShow 12s infinite 0s; }
+.testimonial:nth-child(2) { animation: slideShow 12s infinite 4s; }
+.testimonial:nth-child(3) { animation: slideShow 12s infinite 8s; }
+
+/* Keyframe Animation for the Slider */
+@keyframes slideShow {
+    0% { opacity: 0; }
+    10% { opacity: 1; } 
+    30% { opacity: 1; } 
+    40% { opacity: 0; } 
+    100% { opacity: 0; }
+}
+
+/* Testimonial Box */
+.testimonial {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Testimonial Text */
+.testimonial p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Testimonial Author */
+.testimonial-author {
+    margin-top: 10px;
+    font-style: italic;
+    color: #777;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bounce In Effect for Main Portrait */
+@keyframes scaleInBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Slide Up Effect for Content */
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Rotating Border Animation */
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
